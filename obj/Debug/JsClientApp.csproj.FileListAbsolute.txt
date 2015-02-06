@@ -1,0 +1,6 @@
+C:\Projects\IdentityServer\Team\IdSrvr-RG\JsClientApp\JsClientApp\bin\JsClientApp.dll.config
+C:\Projects\IdentityServer\Team\IdSrvr-RG\JsClientApp\JsClientApp\bin\JsClientApp.dll
+C:\Projects\IdentityServer\Team\IdSrvr-RG\JsClientApp\JsClientApp\bin\JsClientApp.pdb
+C:\Projects\IdentityServer\Team\IdSrvr-RG\JsClientApp\JsClientApp\obj\Debug\JsClientApp.dll
+C:\Projects\IdentityServer\Team\IdSrvr-RG\JsClientApp\JsClientApp\obj\Debug\JsClientApp.pdb
+C:\Projects\IdentityServer\Team\IdSrvr-RG\JsClientApp\JsClientApp\obj\Debug\JsClientApp.csprojResolveAssemblyReference.cache

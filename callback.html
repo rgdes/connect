@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="message"></div>
+    <div><a href="index.html">Go Back To Home Page</a></div>
+    <script src="jquery-2.1.0.min.js"></script>
+    <script src="oidc.js"></script>
+    <script>
+        var config = {
+            authority: "https://appdev-rd.minto.com/IdSrvr_RD/identity",
+            client_id: "jsClient",
+        };
+        var mgr = new TokenManager(config);
+
+        mgr.processTokenCallbackAsync().then(function () {
+            console.log("token obtained", mgr.access_token);
+            window.location = "index.html";
+        }, function (error) {
+            console.log("failed", error);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script src="oidc.js"></script>
+    <script src="jquery-2.1.0.min.js"></script>
+    <div>
+        <button id="get-token">Get Token</button>
+        <button id="call-api">Call API</button>
+        <button id="logout">Logout</button>
+    </div>
+    <script>
+
+        var config = {
+            authority: "https://web-sbx.minto.com/IdSrvr_RD/identity",
+            //authority: "https://appdev-rd.minto.com/IdSrvr_RD/identity",
+            client_id: "crm-reg-client",
+        };
+        var mgr = new TokenManager(config);
+
+        mgr.processTokenCallbackAsync().then(function () {
+            var mgr = new TokenManager(config);
+            window.close();
+        }, function (error) {
+
+        });
+
+
+        //var opts = {
+        //    //authority: "https://appdev-rd.minto.com/IdSrvr_RD/identity",
+        //    authority: "https://web-sbx.minto.com/IdSrvr_RD/identity",
+        //    client_id: "jsClient",
+        //    //redirect_uri: "http://appdev-rd.minto.com/JsClientApp/callback.html",
+        //    redirect_uri: "http://web-sbx.minto.com/JsClientApp/callback.html",
+        //    response_type: "id_token token",
+        //    scope: "openid profile roles sampleApi",
+        //    //silent_redirect_uri: "http://appdev-rd.minto.com/JsClientApp/frame.html",
+        //   // silent_renew: true
+        //};
+
+        //var mgr = new TokenManager(opts);
+        //console.log("is token expired: ", mgr.expired);
+        //if (!mgr.expired) {
+        //    console.log("token expires in: ", mgr.expires_in);
+        //    //console.log("id_token", mgr.id_token_jwt);
+        //    console.log("id_token", mgr.id_token);
+        //    console.log("Access Token : ", mgr.access_token);
+        //}
+
+        //// called when silent renew successful
+        //mgr.addOnTokenObtained(function () {
+        //    console.log("token obtained");
+        //});
+        //mgr.addOnTokenExpiring(function () {
+        //    console.log("token expiring");
+        //});
+
+        //$("#get-token").click(function () {
+        //    console.log("Getting token.");
+        //    mgr.redirectForToken();
+        //});
+
+        //$("#logout").click(function () {
+        //    mgr.removeToken();
+        //    console.log("token removed.");
+        //});
+
+        //$(document).ajaxSend(function (e, xhr, settings) {
+        //    if (mgr.access_token) {
+        //        xhr.setRequestHeader("Authorization", "Bearer " + mgr.access_token);
+        //    }
+        //});
+
+        //$("#call-api").click(function () {
+        //    $.ajax({
+        //        url: "https://appdev-rd.minto.com/webapi/api/TestRest",
+        //        headers: {
+        //            // TODO : How to pass access token to API ?
+        //            Authorization: "Bearer " + mgr.access_token
+        //        }
+        //    }).then(function (data) {
+        //        console.log(data);
+        //    }, function (xhr) {
+        //        console.log("error", xhr.status);
+        //    });
+        //});
+
+        //mgr.addOnTokenExpiring(function () {
+        //    mgr.renewTokenSilentAsync();
+        //});
+        
+
+    </script>
+</body>
+</html>
